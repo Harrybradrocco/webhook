@@ -6,7 +6,7 @@ import { sendWebhook } from './actions/sendWebhook'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from '@/components/ui/use-toast'
 import { ToastProvider } from "@/components/ui/toast"
 import { Poppins } from 'next/font/google'
 
@@ -57,7 +57,7 @@ export default function Home() {
               name="message"
               placeholder="Paste your message here..."
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
               className="min-h-[200px]"
             />
             {showWebhookInput && (
@@ -66,7 +66,7 @@ export default function Home() {
                 type="url"
                 placeholder="Enter Discord webhook URL"
                 value={webhookUrl}
-                onChange={(e) => setWebhookUrl(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWebhookUrl(e.target.value)}
                 required
               />
             )}
